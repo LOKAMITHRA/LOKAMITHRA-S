@@ -1,0 +1,60 @@
+import java.util.*;
+public class Program_1
+{
+    public static class Calculator
+    {
+        public static double Addition(double a,double b)
+        {
+            return a+b;
+        }
+        public static double Subtraction(double a,double b)
+        {
+            return a-b;
+        }
+        public static double Multiplication(double a,double b)
+        {
+            return a*b;
+        }
+        public static double Division(double a,double b)
+        {
+            if(b==0) 
+            {
+                System.out.println("Divisor should not be zero");
+                main(new String[]{});
+                System.exit(0);
+            }
+
+            return a/b;
+            
+        }
+    }
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double a,b;
+        String op;
+        System.out.print("Enter number 1 : ");
+        a=sc.nextDouble();
+        System.out.print("Enter number 2 : ");
+        b=sc.nextDouble();
+        System.out.print("Enter operator(Addition, Subtraction, Multiplication, Division) : ");
+        op=sc.next();
+        switch(op.toLowerCase())
+        {
+            case "addition":
+                System.out.println(Calculator.Addition(a,b));
+                break;
+            case "subtraction":
+                System.out.println(Calculator.Subtraction(a,b));
+                break;
+            case "multiplication":
+                System.out.println(Calculator.Multiplication(a,b));
+                break;
+            case "division":
+                System.out.println(Calculator.Division(a,b));
+                break;
+            default:
+                System.out.println("Enter a valid operator.");
+        }
+        
+	}
+}
